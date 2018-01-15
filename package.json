@@ -1,0 +1,16 @@
+{
+  "name": "redux-votes-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Krzysztof Safjanowski <krzysztof@safjanowski.pl>",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "redux": "^3.7.2",
+    "uuid": "^3.1.0"
+  }
+}
