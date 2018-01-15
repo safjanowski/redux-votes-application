@@ -1,16 +1,32 @@
 {
   "name": "redux-votes-app",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha src/*test.js"
   },
-  "keywords": [],
+  "keywords": [
+    "redux",
+    "test",
+    "unit-test"
+  ],
   "author": "Krzysztof Safjanowski <krzysztof@safjanowski.pl>",
   "license": "MIT",
-  "description": "",
+  "description": "ReduxStore is great place for root of any data for application. Lets play around it little.",
   "dependencies": {
     "redux": "^3.7.2",
     "uuid": "^3.1.0"
-  }
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.1.0"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/safjanowski/redux-votes-application.git"
+  },
+  "bugs": {
+    "url": "https://github.com/safjanowski/redux-votes-application/issues"
+  },
+  "homepage": "https://github.com/safjanowski/redux-votes-application#readme"
 }
