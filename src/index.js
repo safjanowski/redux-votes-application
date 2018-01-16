@@ -1,6 +1,6 @@
 const redux = require('redux')
 
-const root = (state = [], action) => {
+const reducer = (state = [], action) => {
   switch (action.type) {
   
   case 'THUMB_UP': {
@@ -17,4 +17,6 @@ const root = (state = [], action) => {
   }
 }
 
-module.exports = initialState => redux.createStore(root, initialState)
+module.exports = {
+  reducer,
+}

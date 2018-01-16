@@ -1,40 +1,29 @@
 const mocks = require('../mocks')
-const createStore = require('./index')
+const reducer = require('./index').reducer
 const expect = require('chai').expect
 
-const getNoteById = (store, id) => store.getState().find(note => note.id === id)
-
-context(`THUMB_UP`, () => {
-  let store
-  
-  beforeEach(() => {
-    store = createStore(mocks)
+context('reducer', () => {
+  it('returns default state', () => {
+    expect(reducer(undefined, {})).to.deep.equal([])
   })
 
-  it('single dispatch `votes` to with value `1`', () => {
-    const id = 'b5e558f0-999b-40b7-b387-4f60fa421815'
-    
-    store.dispatch({
-      type: 'THUMB_UP',
-      id
+  context(`THUMB_UP`, () => {
+    const id = 'bd4587e3-4f69-4b20-8bfd-b0b15dfc449c'
+    let state
+
+    beforeEach(() => {
+      state = [{
+        votes: 0,
+        id
+      }]
     })
 
-    expect(getNoteById(store, id)).to.have.property('votes').to.equal(1)
-  })
-
-  it('double dispatches updates `votes` with value `2`', () => {
-    const id = 'b5e558f0-999b-40b7-b387-4f60fa421815'
-    
-    store.dispatch({
-      type: 'THUMB_UP',
-      id
+    it('updates `votes` with value `+1`', () => {
+      const newState = reducer(state, {
+        type: 'THUMB_UP',
+        id
+      })
+      expect(newState.find(note => note.id === id)).to.have.property('votes').to.equal(1)
     })
-
-    store.dispatch({
-      type: 'THUMB_UP',
-      id
-    })
-
-    expect(getNoteById(store, id)).to.have.property('votes').to.equal(2)
   })
 })
